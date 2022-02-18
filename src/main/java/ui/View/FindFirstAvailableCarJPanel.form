@@ -52,32 +52,30 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="lblAvailability" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="txtAvailability" min="-2" pref="153" max="-2" attributes="0"/>
-                                  </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="lblEngineNo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblManufacturer" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblModelNumber" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblOwnerSocialSecurityNumber" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblOwnerDriverLicense" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblOwnerEmailAddresses" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblOwnerTelephoneNumbers" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblOwnerName" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblSeatsNumber" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblColor" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblWarrantyYear" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblManufactureYear" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblOwnerAddress" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="lblEngineNo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblManufacturer" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblModelNumber" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblOwnerSocialSecurityNumber" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblOwnerDriverLicense" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblOwnerEmailAddresses" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblOwnerTelephoneNumbers" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblOwnerName" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblSeatsNumber" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblColor" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblWarrantyYear" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblManufactureYear" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblOwnerAddress" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Component id="lblLicensePlates" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="lblLicensePlates" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="lblCity" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -97,14 +95,17 @@
                                           <Component id="txtWarrantyYear" min="-2" pref="153" max="-2" attributes="0"/>
                                           <Component id="txtOwnerName" min="-2" pref="153" max="-2" attributes="0"/>
                                           <Component id="txtLicensePlates" min="-2" pref="153" max="-2" attributes="0"/>
-                                          <Component id="txtPhoto" alignment="0" min="-2" pref="153" max="-2" attributes="0"/>
                                           <Component id="txtSerialNumber" alignment="0" min="-2" pref="153" max="-2" attributes="0"/>
                                       </Group>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="lblAvailability" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="txtAvailability" min="-2" pref="153" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="lbllastUpdateOrCreate" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lblPhoto" min="-2" max="-2" attributes="0"/>
                                           <Component id="lblMaintainanceCertificateDate" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -114,13 +115,21 @@
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="296" max="-2" attributes="0"/>
-                                              <Component id="txtMaintainanceCertificateDate" min="-2" pref="153" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="txtCity" min="-2" pref="153" max="-2" attributes="0"/>
+                                                  <Component id="txtMaintainanceCertificateDate" min="-2" pref="153" max="-2" attributes="0"/>
+                                                  <Component id="txtPhoto" alignment="0" min="-2" pref="153" max="-2" attributes="0"/>
+                                              </Group>
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace min="102" pref="102" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="lblPhoto" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -221,12 +230,17 @@
                           <Component id="lblMaintainanceCertificateDate" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
                           <Component id="txtMaintainanceCertificateDate" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblCity" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtCity" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblPhoto" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtPhoto" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="199" max="32767" attributes="0"/>
+                      <EmptySpace pref="167" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -369,6 +383,13 @@
             <Component class="javax.swing.JTextField" name="txtAvailability">
             </Component>
             <Component class="javax.swing.JTextField" name="txtMaintainanceCertificateDate">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblCity">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="City :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtCity">
             </Component>
           </SubComponents>
         </Container>

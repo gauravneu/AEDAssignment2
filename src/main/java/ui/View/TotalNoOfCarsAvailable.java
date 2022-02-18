@@ -6,6 +6,7 @@ package ui.View;
 
 import java.util.List;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 import model.Car;
 import model.Cars;
 
@@ -23,6 +24,26 @@ public class TotalNoOfCarsAvailable extends javax.swing.JPanel {
     private List<Car> cars1;
     public TotalNoOfCarsAvailable(JPanel upc, List<Car> cars) {
         initComponents();
+        userProcessContainer = upc;
+        cars1 = cars;
+        
+        
+        int totalNoOfCars = 0;
+        totalNoOfCars = cars1.size();
+        
+        txtTotalNoOfCars.setText(String.valueOf(totalNoOfCars));
+        
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0);
+        
+        for (Car c : cars1) {
+            Object row[] = new Object[4];
+            row[0] = c.getManufacturer();
+            row[1] = c.getSerialNumber();
+            row[2] = c.getSeatsNumber();
+            row[3] = c.isAvailability();
+            model.addRow(row);
+        }
     }
 
     /**
@@ -34,19 +55,73 @@ public class TotalNoOfCarsAvailable extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        txtTotalNoOfCars = new javax.swing.JTextField();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Manufacturer", "Serial No", "Seats", "Availability"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jLabel1.setText("Total No Of Cars Available :");
+
+        txtTotalNoOfCars.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTotalNoOfCarsActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 830, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(135, 135, 135)
+                .addComponent(jLabel1)
+                .addGap(159, 159, 159)
+                .addComponent(txtTotalNoOfCars, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(243, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(27, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 772, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(31, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 650, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtTotalNoOfCars, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(554, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(161, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(115, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtTotalNoOfCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalNoOfCarsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTotalNoOfCarsActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField txtTotalNoOfCars;
     // End of variables declaration//GEN-END:variables
 }

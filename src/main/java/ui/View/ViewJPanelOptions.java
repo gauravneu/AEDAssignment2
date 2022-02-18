@@ -82,6 +82,11 @@ public class ViewJPanelOptions extends javax.swing.JPanel {
         btnListCarsBySeatNumbers.setText("List Cars By Seat Numbers");
 
         btnListCarBySerialNumber.setText("List Car By Serial Number");
+        btnListCarBySerialNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListCarBySerialNumberActionPerformed(evt);
+            }
+        });
 
         btnListCarsByModelNumber.setText("List Cars By Model Number");
 
@@ -202,6 +207,13 @@ public class ViewJPanelOptions extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Nothing found", "No result found matching your criteria!!", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnTotalNumberOfAvailableCarsActionPerformed
+
+    private void btnListCarBySerialNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListCarBySerialNumberActionPerformed
+        SearchCarBySerialNumberJPanel scbsnjp = new SearchCarBySerialNumberJPanel(userProcessContainer, cars);
+        userProcessContainer.add("SearchCarBySerialNumberJPanel",scbsnjp);
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnListCarBySerialNumberActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

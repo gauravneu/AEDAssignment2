@@ -37,33 +37,43 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
         
                 txtManufacturer.setText(car1.getManufacturer());
                 txtColor.setText(car1.getColor());
-    //            txtEngineNo.setText(String.valueOf(car1.getEngineNo()));
+                txtEngineNo.setText(String.valueOf(car1.getEngineNo()));
                 txtLicensePlates.setText(String.valueOf(car1.getLicensePlates()));
                 txtModelNumber.setText(String.valueOf(car1.getModelNumber()));
                 txtOwnerAddress.setText(car1.getOwnerAddress());
                 txtOwnerName.setText(car1.getOwnerName());
                 txtOwnerDriverLicense.setText(String.valueOf(car1.getOwnerDriverLicense()));
-    //            txtOwnerEmailAddresses.setText(car1.getOwnerEmailAddress());
+                txtOwnerEmailAddresses.setText(car1.getOwnerEmailAddresses());
                 txtOwnerSocialSecurityNumber.setText(String.valueOf(car1.getOwnerSocialSecurityNumber()));
                 txtOwnerTelephoneNumbers.setText(String.valueOf(car1.getOwnerTelephoneNumbers()));
-    //            BufferedImage image;
-    //            try {
-    //                image = ImageIO.read(new File("./"+car1.getPhoto()));
-     //               ImageIcon ic = new ImageIcon(image.getScaledInstance(100, 100, Image.SCALE_DEFAULT));
-    //                
-    //                carPhoto.setIcon(ic);
+   //           BufferedImage image;
+   //            try {
+   //                image = ImageIO.read(new File("./"+car1.getPhoto()));
+   //               ImageIcon ic = new ImageIcon(image.getScaledInstance(100, 100, Image.SCALE_DEFAULT));
+   //                
+   //                carPhoto.setIcon(ic);
                    
-    //            } catch (IOException ex) {
+   //            } catch (IOException ex) {
    //                 JOptionPane.showMessageDialog(this, "Not a valid image to show!!");
-        //        }
-               txtSeatsNumber.setText(String.valueOf(car1.getSeatsNumber()));
+   //           }
+                txtSeatsNumber.setText(String.valueOf(car1.getSeatsNumber()));
                 txtWarrantyYear.setText(String.valueOf(car1.getWarrantyYear()));
-         //       txtYear.setText(String.valueOf(car1.getYear()));
-        
-        
-        
-        
-        
+                
+                String maintainanceDate = car1.getMaintainanceCertificateDate().toString().substring(4,10) 
+                        + "," + car1.getMaintainanceCertificateDate().toString().substring(24);                
+                txtMaintainanceCertificateDate.setText(maintainanceDate);
+                txtCity.setText(car1.getCity());               
+                if (car1.isAvailability() == true)
+                {
+                    txtAvailability.setText("Available");
+                }else{
+                    txtAvailability.setText("Not Available");
+                }
+                txtManufactureYear.setText(String.valueOf(car1.getManufactureYear()));
+                txtSerialNumber.setText(String.valueOf(car1.getSerialNumber()));
+                String updateOrCreateDate = car1.getLastUpdateOrCreate().toString().substring(4,10) 
+                        + "," + car1.getLastUpdateOrCreate().toString().substring(24);
+                txtLastUpdateOrCreate.setText(updateOrCreateDate);      
         
         
     }
@@ -118,6 +128,8 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
         txtLastUpdateOrCreate = new javax.swing.JTextField();
         txtAvailability = new javax.swing.JTextField();
         txtMaintainanceCertificateDate = new javax.swing.JTextField();
+        lblCity = new javax.swing.JLabel();
+        txtCity = new javax.swing.JTextField();
 
         jLabel1.setText("First Available car");
 
@@ -159,6 +171,8 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
 
         lblMaintainanceCertificateDate.setText("Maintainance Certificate Date :");
 
+        lblCity.setText("City :");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -175,29 +189,27 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblAvailability)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtAvailability, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lblEngineNo)
-                                        .addComponent(lblManufacturer)
-                                        .addComponent(lblModelNumber)
-                                        .addComponent(lblOwnerSocialSecurityNumber)
-                                        .addComponent(lblOwnerDriverLicense)
-                                        .addComponent(lblOwnerEmailAddresses)
-                                        .addComponent(lblOwnerTelephoneNumbers)
-                                        .addComponent(lblOwnerName)
-                                        .addComponent(lblSeatsNumber)
-                                        .addComponent(lblColor)
-                                        .addComponent(lblWarrantyYear)
-                                        .addComponent(lblManufactureYear)
-                                        .addComponent(lblOwnerAddress))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(lblLicensePlates)
-                                        .addGap(103, 103, 103)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lblEngineNo)
+                                            .addComponent(lblManufacturer)
+                                            .addComponent(lblModelNumber)
+                                            .addComponent(lblOwnerSocialSecurityNumber)
+                                            .addComponent(lblOwnerDriverLicense)
+                                            .addComponent(lblOwnerEmailAddresses)
+                                            .addComponent(lblOwnerTelephoneNumbers)
+                                            .addComponent(lblOwnerName)
+                                            .addComponent(lblSeatsNumber)
+                                            .addComponent(lblColor)
+                                            .addComponent(lblWarrantyYear)
+                                            .addComponent(lblManufactureYear)
+                                            .addComponent(lblOwnerAddress))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(lblLicensePlates)
+                                            .addGap(103, 103, 103)))
+                                    .addComponent(lblCity))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -215,12 +227,14 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
                                     .addComponent(txtWarrantyYear, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtOwnerName, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtLicensePlates, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblAvailability)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtAvailability, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lbllastUpdateOrCreate)
-                                    .addComponent(lblPhoto)
                                     .addComponent(lblMaintainanceCertificateDate))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -228,9 +242,15 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
                                         .addComponent(txtLastUpdateOrCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(296, 296, 296)
-                                        .addComponent(txtMaintainanceCertificateDate, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtCity, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtMaintainanceCertificateDate, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(0, 0, Short.MAX_VALUE)))))
-                        .addGap(102, 102, 102))))
+                        .addGap(102, 102, 102))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblPhoto)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -311,9 +331,13 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
                     .addComponent(txtMaintainanceCertificateDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCity)
+                    .addComponent(txtCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPhoto)
                     .addComponent(txtPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(199, Short.MAX_VALUE))
+                .addContainerGap(167, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -338,6 +362,7 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblAvailability;
+    private javax.swing.JLabel lblCity;
     private javax.swing.JLabel lblColor;
     private javax.swing.JLabel lblEngineNo;
     private javax.swing.JLabel lblLicensePlates;
@@ -357,6 +382,7 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblWarrantyYear;
     private javax.swing.JLabel lbllastUpdateOrCreate;
     private javax.swing.JTextField txtAvailability;
+    private javax.swing.JTextField txtCity;
     private javax.swing.JTextField txtColor;
     private javax.swing.JTextField txtEngineNo;
     private javax.swing.JTextField txtLastUpdateOrCreate;

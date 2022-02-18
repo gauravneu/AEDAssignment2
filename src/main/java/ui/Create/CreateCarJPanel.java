@@ -231,8 +231,6 @@ public class CreateCarJPanel extends javax.swing.JPanel {
             carProp.load(reader);
             
             
-            
-            
             try{    
                 seatsNumber = Integer.parseInt(txtSeatsNumber.getText());
                 serialNumber = Integer.parseInt(txtSerialNo.getText());
@@ -242,12 +240,6 @@ public class CreateCarJPanel extends javax.swing.JPanel {
             catch(Exception e){
                 JOptionPane.showMessageDialog(this, "Provide correct int value of SeatNumber, SerialNo, ManufactureYear and Model Number");
             }
-            
-            
-            
-            
-            
-            
             
             if (manufactureYear < 2019 || manufactureYear > 2021 || serialNumber < 5) {
                     JOptionPane.showMessageDialog(this, "Serial number should be greater than 3 digits And Manufacture year should be from 2019,2020,2021!!");
@@ -286,42 +278,30 @@ public class CreateCarJPanel extends javax.swing.JPanel {
                 availability = false;
             }
             
-            
- 
-            
-            Car car = cars.addNewcar();
-            
-            try{   
-                
+            Date date;
+                try{   
                     DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                     formatter.setLenient(false);
                     String dateInString = txtMaintainanceCertificateDate.getText();
-                    Date date = formatter.parse(dateInString);
+                    date = formatter.parse(dateInString);
                     String year = dateInString.split("/")[2];
-            //        System.out.println(year);
-            //        System.out.println(date);
                     if (year.length()!=4){
                     throw new Exception("Year should nbe 4 digit long");
-                    }
-            
-            
-           //     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
-           //     Date date = new Date();
-            //    String date1 =formatter.format(date);
-                    car.setMaintainanceCertificateDate(date);
-                    System.out.println(car.getMaintainanceCertificateDate());
+                    }        
                     
-                    Date date1 = new Date();
-                    System.out.println(date1);
             }
             catch(Exception e){
                 JOptionPane.showMessageDialog(this, "Provide correct value of Maintainance Certificate Date in dd/MM/yyyy format");
                 return;
             }
             
+            Car car = cars.addNewcar();
+            
+            Date dateNow = new Date();
             
             
             
+            car.setMaintainanceCertificateDate(date);
             car.setCity(city);
             car.setAvailability(availability);
             car.setManufactureYear(manufactureYear);
@@ -330,7 +310,8 @@ public class CreateCarJPanel extends javax.swing.JPanel {
             car.setSeatsNumber(seatsNumber);
             car.setSerialNumber(serialNumber);
             
-            
+            car.setEngineNo(carProp.getProperty("engineNo"));
+            car.setOwnerEmailAddresses(carProp.getProperty("emailAddress"));
             car.setColor(carProp.getProperty("color"));
             car.setLicensePlates(Integer.parseInt(carProp.getProperty("licensePlates")));
             car.setOwnerAddress(carProp.getProperty("ownerAddress"));
@@ -339,7 +320,7 @@ public class CreateCarJPanel extends javax.swing.JPanel {
             car.setOwnerSocialSecurityNumber((Integer.parseInt(carProp.getProperty("ownerSocialSecurityNumber"))));
             car.setOwnerTelephoneNumbers(Long.parseLong(carProp.getProperty("telephonenumber")));
             car.setWarrantyYear(Integer.parseInt(carProp.getProperty("warrantyyear")));
-       //     car.setLastUpdateOrCreate();
+            car.setLastUpdateOrCreate(dateNow);
             JOptionPane.showMessageDialog(null, "Car added!", "Info", JOptionPane.INFORMATION_MESSAGE);
             
         } catch (FileNotFoundException ex) {

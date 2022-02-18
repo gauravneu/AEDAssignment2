@@ -62,6 +62,8 @@ public class Cars {
     
     
     public List<Car> searchCarByManufacturer(String manufacturer){
+        System.out.println("Search Car By Manufacturer");
+        
     List<Car> car2 = new ArrayList<>();
     for (Car c: cars){
         System.out.println("Loop running");

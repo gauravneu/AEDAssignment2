@@ -19,12 +19,13 @@ private int modelNumber;
 private String color;
 private int manufactureYear;
 private int seatsNumber;
-
+private String engineNo;
 private int licensePlates;
 private String ownerName;
 private long ownerTelephoneNumbers;
 private int ownerDriverLicense;
 private int ownerSocialSecurityNumber;
+private String ownerEmailAddresses;
 private String ownerAddress;
 private int warrantyYear;
 private Date lastUpdateOrCreate;
@@ -32,7 +33,13 @@ private boolean availability;
 private String city;
 private Date maintainanceCertificateDate;
 
+    public String getEngineNo() {
+        return engineNo;
+    }
 
+    public void setEngineNo(String engineNo) {
+        this.engineNo = engineNo;
+    }
 
     public int getSerialNumber() {
         return serialNumber;
@@ -193,9 +200,14 @@ private Date maintainanceCertificateDate;
     public void setCity(String city) {
         this.city = city;
     }
+
+    public String getOwnerEmailAddresses() {
+        return ownerEmailAddresses;
+    }
+
+    public void setOwnerEmailAddresses(String wnerEmailAddresses) {
+        this.ownerEmailAddresses = wnerEmailAddresses;
+    }
         
-
-
-
 
 }
