@@ -121,11 +121,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="List Cars By Manufacture Year"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListCarsByManufactureYearActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnListCarsBySeatNumbers">
       <Properties>
         <Property name="text" type="java.lang.String" value="List Cars By Seat Numbers"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListCarsBySeatNumbersActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnListCarBySerialNumber">
       <Properties>
@@ -139,26 +145,41 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="List Cars By Model Number"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListCarsByModelNumberActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnListAllCarManufacturers">
       <Properties>
         <Property name="text" type="java.lang.String" value="List All Car manufacturers"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListAllCarManufacturersActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnLastTimeFleetWasUpdated">
       <Properties>
         <Property name="text" type="java.lang.String" value="Last Time Fleet Was Updated"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLastTimeFleetWasUpdatedActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnListCarsByGivenCity">
       <Properties>
         <Property name="text" type="java.lang.String" value="List Cars By Given City"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListCarsByGivenCityActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnListCarsExpiredMaintainanceDate">
       <Properties>
         <Property name="text" type="java.lang.String" value="List Cars With Expired Maintainance Date"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListCarsExpiredMaintainanceDateActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

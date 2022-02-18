@@ -15,16 +15,18 @@ import model.Cars;
  *
  * @author gaurav
  */
-public class SearchCarBySerialNumberJPanel extends javax.swing.JPanel {
+
+
+public class SearchCarsByCityJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form SearchCarBySerialNumberJPanel
+     * Creates new form SearchCarsByCityJPanel
      */
-    
     private JPanel userProcessContainer;
     private Cars cars;
-    private Car car;
-    public SearchCarBySerialNumberJPanel(JPanel upc, Cars c) {
+    private List<Car> cars1;
+    
+    public SearchCarsByCityJPanel(JPanel upc , Cars c) {
         cars = c;
         userProcessContainer = upc;
         initComponents();
@@ -39,14 +41,14 @@ public class SearchCarBySerialNumberJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        txtSerialNumber = new javax.swing.JTextField();
+        lblSearchCarByManufacture = new javax.swing.JLabel();
+        lblManufacturer = new javax.swing.JLabel();
+        txtCity = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
 
-        jLabel1.setText("Search Car By Serial Number");
+        lblSearchCarByManufacture.setText("Search Car By City");
 
-        jLabel2.setText("Serial Number :");
+        lblManufacturer.setText("City :");
 
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -60,46 +62,45 @@ public class SearchCarBySerialNumberJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(124, 124, 124)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 313, Short.MAX_VALUE)
-                .addComponent(txtSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(137, 137, 137))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(292, 292, 292)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(291, 291, 291)
+                        .addComponent(lblSearchCarByManufacture, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(344, 344, 344)
+                        .addGap(322, 322, 322)
                         .addComponent(btnSearch)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(329, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(163, 163, 163)
+                .addComponent(lblManufacturer)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtCity, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(235, 235, 235))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(43, 43, 43)
+                .addComponent(lblSearchCarByManufacture, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                    .addComponent(lblManufacturer)
+                    .addComponent(txtCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
                 .addComponent(btnSearch)
-                .addContainerGap(475, Short.MAX_VALUE))
+                .addContainerGap(404, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         try{
-        Car c;
         
-        int serialNumber = (Integer.parseInt(txtSerialNumber.getText()));
-        c = cars.searchCarBySerialNumber(serialNumber);
+        String city = (txtCity.getText());
+        cars1 = cars.getCarsByCity(city);
         
-        if(c != null){
-        SearchCarBySerialNumber scbsn = new SearchCarBySerialNumber(userProcessContainer, c);
-        userProcessContainer.add("SearchCarBySerialNumber", scbsn);
+        if(cars1.size() >0){
+        SearchCarByCity scbc = new SearchCarByCity(userProcessContainer, cars1);
+        userProcessContainer.add("SearchCarByManufacturer", scbc);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         }
@@ -116,8 +117,8 @@ public class SearchCarBySerialNumberJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSearch;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField txtSerialNumber;
+    private javax.swing.JLabel lblManufacturer;
+    private javax.swing.JLabel lblSearchCarByManufacture;
+    private javax.swing.JTextField txtCity;
     // End of variables declaration//GEN-END:variables
 }

@@ -18,13 +18,14 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" pref="755" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="849" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" alignment="1" pref="897" max="32767" attributes="0"/>
+          <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -38,11 +39,6 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="227" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" pref="197" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -52,6 +48,11 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="lblPhoto" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="txtPhoto" min="-2" pref="153" max="-2" attributes="0"/>
+                                  </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="103" groupAlignment="1" attributes="0">
@@ -77,25 +78,28 @@
                                           </Group>
                                           <Component id="lblCity" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace pref="319" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="txtModelNumber" alignment="1" min="-2" pref="153" max="-2" attributes="0"/>
-                                              <Component id="txtColor" alignment="0" min="-2" pref="153" max="-2" attributes="0"/>
-                                              <Component id="txtManufacturer" alignment="1" min="-2" pref="153" max="-2" attributes="0"/>
-                                              <Component id="txtManufactureYear" alignment="0" min="-2" pref="153" max="-2" attributes="0"/>
-                                              <Component id="txtEngineNo" alignment="0" min="-2" pref="153" max="-2" attributes="0"/>
-                                              <Component id="txtSeatsNumber" alignment="0" min="-2" pref="153" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="txtModelNumber" alignment="1" min="-2" pref="153" max="-2" attributes="0"/>
+                                                  <Component id="txtColor" alignment="0" min="-2" pref="153" max="-2" attributes="0"/>
+                                                  <Component id="txtManufacturer" alignment="1" min="-2" pref="153" max="-2" attributes="0"/>
+                                                  <Component id="txtManufactureYear" alignment="0" min="-2" pref="153" max="-2" attributes="0"/>
+                                                  <Component id="txtEngineNo" alignment="0" min="-2" pref="153" max="-2" attributes="0"/>
+                                                  <Component id="txtSeatsNumber" alignment="0" min="-2" pref="153" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="txtOwnerTelephoneNumbers" min="-2" pref="153" max="-2" attributes="0"/>
+                                              <Component id="txtOwnerSocialSecurityNumber" min="-2" pref="153" max="-2" attributes="0"/>
+                                              <Component id="txtOwnerAddress" min="-2" pref="153" max="-2" attributes="0"/>
+                                              <Component id="txtOwnerEmailAddresses" min="-2" pref="153" max="-2" attributes="0"/>
+                                              <Component id="txtOwnerDriverLicense" min="-2" pref="153" max="-2" attributes="0"/>
+                                              <Component id="txtWarrantyYear" min="-2" pref="153" max="-2" attributes="0"/>
+                                              <Component id="txtOwnerName" min="-2" pref="153" max="-2" attributes="0"/>
+                                              <Component id="txtLicensePlates" min="-2" pref="153" max="-2" attributes="0"/>
+                                              <Component id="txtSerialNumber" alignment="0" min="-2" pref="153" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="txtOwnerTelephoneNumbers" min="-2" pref="153" max="-2" attributes="0"/>
-                                          <Component id="txtOwnerSocialSecurityNumber" min="-2" pref="153" max="-2" attributes="0"/>
-                                          <Component id="txtOwnerAddress" min="-2" pref="153" max="-2" attributes="0"/>
-                                          <Component id="txtOwnerEmailAddresses" min="-2" pref="153" max="-2" attributes="0"/>
-                                          <Component id="txtOwnerDriverLicense" min="-2" pref="153" max="-2" attributes="0"/>
-                                          <Component id="txtWarrantyYear" min="-2" pref="153" max="-2" attributes="0"/>
-                                          <Component id="txtOwnerName" min="-2" pref="153" max="-2" attributes="0"/>
-                                          <Component id="txtLicensePlates" min="-2" pref="153" max="-2" attributes="0"/>
-                                          <Component id="txtSerialNumber" alignment="0" min="-2" pref="153" max="-2" attributes="0"/>
+                                          <Component id="txtCity" alignment="1" min="-2" pref="153" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" attributes="0">
@@ -108,30 +112,21 @@
                                           <Component id="lbllastUpdateOrCreate" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="lblMaintainanceCertificateDate" min="-2" max="-2" attributes="0"/>
                                       </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="txtLastUpdateOrCreate" min="-2" pref="153" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="296" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="txtCity" min="-2" pref="153" max="-2" attributes="0"/>
-                                                  <Component id="txtMaintainanceCertificateDate" min="-2" pref="153" max="-2" attributes="0"/>
-                                                  <Component id="txtPhoto" alignment="0" min="-2" pref="153" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          </Group>
+                                          <Component id="txtLastUpdateOrCreate" alignment="1" min="-2" pref="153" max="-2" attributes="0"/>
+                                          <Component id="txtMaintainanceCertificateDate" alignment="1" min="-2" pref="153" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="lblPhoto" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="294" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="197" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -231,16 +226,16 @@
                           <Component id="txtMaintainanceCertificateDate" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblCity" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="txtCity" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblCity" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblPhoto" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtPhoto" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="167" max="32767" attributes="0"/>
+                      <EmptySpace pref="182" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

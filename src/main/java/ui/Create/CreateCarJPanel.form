@@ -69,8 +69,6 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="292" max="-2" attributes="0"/>
               <Component id="lblSave" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-              <Component id="txtPhotoChooser" min="-2" pref="138" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
@@ -127,11 +125,8 @@
                   <Component id="txtMaintainanceCertificateDate" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblMaintainanceCertificateDate" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="lblSave" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtPhotoChooser" min="-2" pref="38" max="-2" attributes="0"/>
-              </Group>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <Component id="lblSave" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="94" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -206,8 +201,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="CREATE CAR"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JFileChooser" name="txtPhotoChooser">
     </Component>
   </SubComponents>
 </Form>

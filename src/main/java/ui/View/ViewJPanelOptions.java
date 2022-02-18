@@ -5,6 +5,8 @@
 package ui.View;
 
 import java.awt.CardLayout;
+import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -78,8 +80,18 @@ public class ViewJPanelOptions extends javax.swing.JPanel {
         });
 
         btnListCarsByManufactureYear.setText("List Cars By Manufacture Year");
+        btnListCarsByManufactureYear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListCarsByManufactureYearActionPerformed(evt);
+            }
+        });
 
         btnListCarsBySeatNumbers.setText("List Cars By Seat Numbers");
+        btnListCarsBySeatNumbers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListCarsBySeatNumbersActionPerformed(evt);
+            }
+        });
 
         btnListCarBySerialNumber.setText("List Car By Serial Number");
         btnListCarBySerialNumber.addActionListener(new java.awt.event.ActionListener() {
@@ -89,14 +101,39 @@ public class ViewJPanelOptions extends javax.swing.JPanel {
         });
 
         btnListCarsByModelNumber.setText("List Cars By Model Number");
+        btnListCarsByModelNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListCarsByModelNumberActionPerformed(evt);
+            }
+        });
 
         btnListAllCarManufacturers.setText("List All Car manufacturers");
+        btnListAllCarManufacturers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListAllCarManufacturersActionPerformed(evt);
+            }
+        });
 
         btnLastTimeFleetWasUpdated.setText("Last Time Fleet Was Updated");
+        btnLastTimeFleetWasUpdated.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLastTimeFleetWasUpdatedActionPerformed(evt);
+            }
+        });
 
         btnListCarsByGivenCity.setText("List Cars By Given City");
+        btnListCarsByGivenCity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListCarsByGivenCityActionPerformed(evt);
+            }
+        });
 
         btnListCarsExpiredMaintainanceDate.setText("List Cars With Expired Maintainance Date");
+        btnListCarsExpiredMaintainanceDate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListCarsExpiredMaintainanceDateActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -160,8 +197,8 @@ public class ViewJPanelOptions extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnListCarsByManufacturerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListCarsByManufacturerActionPerformed
-        ListCarsByManufacturersJPanel lcbmjp = new ListCarsByManufacturersJPanel(userProcessContainer, cars);
-        userProcessContainer.add("ListCarsByManufacturersJPanel",lcbmjp);
+        SearchCarsByManufacturersJPanel scbmjp = new SearchCarsByManufacturersJPanel(userProcessContainer, cars);
+        userProcessContainer.add("ListCarsByManufacturersJPanel",scbmjp);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnListCarsByManufacturerActionPerformed
@@ -189,10 +226,10 @@ public class ViewJPanelOptions extends javax.swing.JPanel {
     }//GEN-LAST:event_btnFirstAvailableCarActionPerformed
 
     private void btnTotalNumberOfAvailableCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalNumberOfAvailableCarsActionPerformed
-        try{
+    try{
         List<Car> c;
-        c = cars.getAllCars();
-        if(c!=null){
+        c = cars.getAllAvailableCars();
+        if(c.size()>0){
         TotalNoOfCarsAvailable tnoca = new TotalNoOfCarsAvailable(userProcessContainer, c);
         userProcessContainer.add("TotalNoOfCarsAvailable", tnoca);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
@@ -214,6 +251,95 @@ public class ViewJPanelOptions extends javax.swing.JPanel {
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnListCarBySerialNumberActionPerformed
+
+    private void btnListCarsByModelNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListCarsByModelNumberActionPerformed
+        SearchCarByModelNumberJPanel scbmnjp = new SearchCarByModelNumberJPanel(userProcessContainer, cars);
+        userProcessContainer.add("SearchCarByModelNumberJPanel",scbmnjp);
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnListCarsByModelNumberActionPerformed
+
+    private void btnListCarsByManufactureYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListCarsByManufactureYearActionPerformed
+        SearchCarByManufactureYearJPanel scbmyjp = new SearchCarByManufactureYearJPanel(userProcessContainer, cars);
+        userProcessContainer.add("SearchCarByManufactureYearJPanel",scbmyjp);
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnListCarsByManufactureYearActionPerformed
+
+    private void btnListCarsBySeatNumbersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListCarsBySeatNumbersActionPerformed
+        SearchCarBySeatsJPanel scbsjp = new SearchCarBySeatsJPanel(userProcessContainer, cars);
+        userProcessContainer.add("SearchCarBySeatsJPanel",scbsjp);
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnListCarsBySeatNumbersActionPerformed
+
+    private void btnListCarsExpiredMaintainanceDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListCarsExpiredMaintainanceDateActionPerformed
+    try{
+        List<Car> c;
+        c = cars.getCarsByExpiredMaintainanceCertificate();
+        if(c.size()>0){
+        CarsWithExpiredMaintainanceDate cwemd = new CarsWithExpiredMaintainanceDate(userProcessContainer, c);
+        userProcessContainer.add("CarsWithExpiredMaintainanceDate", cwemd);
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Nothing found", "No result found matching your criteria!!", JOptionPane.WARNING_MESSAGE);
+            //return;
+        }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Nothing found", "No result found matching your criteria!!", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnListCarsExpiredMaintainanceDateActionPerformed
+
+    private void btnListCarsByGivenCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListCarsByGivenCityActionPerformed
+        SearchCarsByCityJPanel scbcjp = new SearchCarsByCityJPanel(userProcessContainer, cars);
+        userProcessContainer.add("SearchCarsByCityJPanel",scbcjp);
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnListCarsByGivenCityActionPerformed
+
+    private void btnLastTimeFleetWasUpdatedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLastTimeFleetWasUpdatedActionPerformed
+        try{
+        Date date;
+        date = cars.getLastUpdateTime();
+        if(date!= null){
+            System.out.println(date);
+            JOptionPane.showMessageDialog(this,
+                    date.toString().substring(4,10) + "," + date.toString().substring(24) + " " + date.toString().substring(11,19),
+                    "Fleet was last updated at",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Nothing found", "No result found matching your criteria!!", JOptionPane.WARNING_MESSAGE);
+            //return;
+        }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Nothing found", "No result found matching your criteria!!", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnLastTimeFleetWasUpdatedActionPerformed
+
+    private void btnListAllCarManufacturersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListAllCarManufacturersActionPerformed
+        try{
+        HashSet<String> manufacturer = new HashSet<>();
+        manufacturer = cars.getManufacturers();
+        if(!manufacturer.isEmpty()){
+        CarsManufacturers cm = new CarsManufacturers(userProcessContainer, manufacturer);
+        userProcessContainer.add("CarsManufacturers", cm);
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Nothing found", "No result found matching your criteria!!", JOptionPane.WARNING_MESSAGE);
+            //return;
+        }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Nothing found", "No result found matching your criteria!!", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnListAllCarManufacturersActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

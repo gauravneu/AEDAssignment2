@@ -72,8 +72,7 @@ public class Cars {
         if (c.getManufacturer().equals(manufacturer)){
             System.out.println("Cars.java | searchCarByManufacturer | c.getManufacturer()  | manufacturer" + c.getManufacturer() + manufacturer);
         car2.add(c);
-        }
-       
+        }      
     }
         
     return car2;
@@ -92,19 +91,31 @@ public class Cars {
     for (Car c: cars){
         if (c.getModelNumber()== modelNumber){
         car2.add(c);
-        }
-        
+        }      
     }
     return car2;
     
 }
-    
     //Get All Cars
     
-    public List<Car> getAllCars(){
-    return cars;
+    public List<Car> getAllAvailableCars(){
     
-}
+    List<Car> car2 = new ArrayList<Car>();
+    for (Car c: cars){
+      //  System.out.println(String.valueOf(c.isAvailability()));
+        if (c.isAvailability() == true){
+        car2.add(c);
+        }
+    }
+    return car2;
+    }
+    
+    
+    //Get All Available Cars
+    
+    public List<Car> getAllCars(){return cars;}
+    
+    
     
     //Get First Available Car
     
@@ -136,15 +147,14 @@ public class Cars {
         
     //Get All Cars manufactured in given Year
     
-    public ArrayList<Car> getCarsByManufacturedYear(int manufactureYear){
+    public ArrayList<Car> getCarsByManufactureYear(int manufactureYear){
     ArrayList<Car> car2 = new ArrayList<Car>();
     for (Car c: cars){
         if (c.getManufactureYear() == manufactureYear){
         car2.add(c);
         }
-        return car2;
     }
-    return null;
+    return car2;
     
 }
     
@@ -153,7 +163,7 @@ public class Cars {
     public ArrayList<Car> getCarsByCity(String city){
     ArrayList<Car> car2 = new ArrayList<Car>();
     for (Car c: cars){
-        if (c.getCity()== city){
+        if (c.getCity().equals(city)){
         car2.add(c);
         }
     }
@@ -167,18 +177,17 @@ public class Cars {
     public ArrayList<Car> getCarsBySeatsNumber(int minSeat , int maxSeat){
     ArrayList<Car> car2 = new ArrayList<Car>();
     for (Car c: cars){
-        if (c.getSeatsNumber() >= minSeat && c.getSeatsNumber() < maxSeat){
+        if (c.getSeatsNumber() >= minSeat && c.getSeatsNumber() <= maxSeat){
         car2.add(c);
         }
-        return car2;
     }
-    return null;
+    return car2;
     
 }
     
     //List All Cars by Expired Maintainance Certificate
-  /*  
-    public ArrayList<Car> getCarsByManufacturedYear(){
+    
+    public ArrayList<Car> getCarsByExpiredMaintainanceCertificate(){
     ArrayList<Car> car2 = new ArrayList<Car>();
     
     Date date = new Date();
@@ -187,31 +196,27 @@ public class Cars {
         if (c.getMaintainanceCertificateDate().compareTo(date) < 0){
         car2.add(c);
         }
-        return car2;
     }
-    return null;
+    return car2;
     
 }
-    */
+    
     
   //Last Fleet update time
     
-/*   public Date getLastUpdateTime(){
+   public Date getLastUpdateTime(){
         
-    
-    
     Date date = new Date(0, 0, 0 , 0, 0 ,0);
     
     for (Car c: cars){
     
-        if (c.getMaintainanceCertificateDate().compareTo(date)> 0){
-        date = c.getMaintainanceCertificateDate();
+        if (c.getLastUpdateOrCreate().compareTo(date)> 0){
+        date = c.getLastUpdateOrCreate();
         }
-        return date;
     }
-    return null;
+    return date;
     
-} */
+} 
     // List All Car Manufacturers
 
     /**
@@ -219,18 +224,16 @@ public class Cars {
      * @return
      */
     
-    public HashSet<Integer> getModels(){
-    
-        
-        HashSet<Integer> hs = new HashSet<>();
+    public HashSet<String> getManufacturers(){    
+    HashSet<String> hs = new HashSet<>();
 
     for (Car c: cars){
         {
-        hs.add(c.getModelNumber());
+        hs.add(c.getManufacturer());
         }
-        return hs;
+
     }
-    return null;
+    return hs;
     
 }
     

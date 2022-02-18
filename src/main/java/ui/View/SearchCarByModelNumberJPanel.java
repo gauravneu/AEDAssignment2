@@ -15,16 +15,15 @@ import model.Cars;
  *
  * @author gaurav
  */
-public class SearchCarBySerialNumberJPanel extends javax.swing.JPanel {
+public class SearchCarByModelNumberJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form SearchCarBySerialNumberJPanel
+     * Creates new form SearchCarByModelNumberJPanel
      */
-    
     private JPanel userProcessContainer;
     private Cars cars;
-    private Car car;
-    public SearchCarBySerialNumberJPanel(JPanel upc, Cars c) {
+    private List<Car> cars1;
+    public SearchCarByModelNumberJPanel(JPanel upc , Cars c) {
         cars = c;
         userProcessContainer = upc;
         initComponents();
@@ -41,12 +40,12 @@ public class SearchCarBySerialNumberJPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtSerialNumber = new javax.swing.JTextField();
+        txtModelNumber = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
 
-        jLabel1.setText("Search Car By Serial Number");
+        jLabel1.setText("Search Car By Model Number");
 
-        jLabel2.setText("Serial Number :");
+        jLabel2.setText("Model Number :");
 
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -62,8 +61,8 @@ public class SearchCarBySerialNumberJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(124, 124, 124)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 313, Short.MAX_VALUE)
-                .addComponent(txtSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 309, Short.MAX_VALUE)
+                .addComponent(txtModelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(137, 137, 137))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,7 +82,7 @@ public class SearchCarBySerialNumberJPanel extends javax.swing.JPanel {
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txtSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtModelNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addComponent(btnSearch)
                 .addContainerGap(475, Short.MAX_VALUE))
@@ -91,15 +90,15 @@ public class SearchCarBySerialNumberJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        try{
+    try{
         Car c;
         
-        int serialNumber = (Integer.parseInt(txtSerialNumber.getText()));
-        c = cars.searchCarBySerialNumber(serialNumber);
+        int modelNumber = Integer.parseInt(txtModelNumber.getText());
+        cars1 = cars.searchCarByModel(modelNumber);
         
-        if(c != null){
-        SearchCarBySerialNumber scbsn = new SearchCarBySerialNumber(userProcessContainer, c);
-        userProcessContainer.add("SearchCarBySerialNumber", scbsn);
+        if(cars1.size()>0){
+        SearchCarByModelNumber scbmn = new SearchCarByModelNumber(userProcessContainer, cars1);
+        userProcessContainer.add("SearchCarByModelNumber", scbmn);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         }
@@ -118,6 +117,6 @@ public class SearchCarBySerialNumberJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnSearch;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField txtSerialNumber;
+    private javax.swing.JTextField txtModelNumber;
     // End of variables declaration//GEN-END:variables
 }

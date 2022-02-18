@@ -18,17 +18,17 @@ import model.Cars;
  */
     
 
-public class ListCarsByManufacturersJPanel extends javax.swing.JPanel {
+public class SearchCarsByManufacturersJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form ListCarsByManufacturersJPanel
+     * Creates new form SearchCarsByManufacturersJPanel
      */
     
     private JPanel userProcessContainer;
     private Cars cars;
     private List<Car> cars1;
     
-    public ListCarsByManufacturersJPanel(JPanel upc , Cars c) {
+    public SearchCarsByManufacturersJPanel(JPanel upc , Cars c) {
         cars = c;
         userProcessContainer = upc;
         initComponents();
@@ -95,12 +95,11 @@ public class ListCarsByManufacturersJPanel extends javax.swing.JPanel {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         try{
-        Car c;
         
         String manufacturer = (txtManufacturer.getText());
         cars1 = cars.searchCarByManufacturer(manufacturer);
         
-        if(cars1!=null){
+        if(cars1.size() >0){
         SearchCarByManufacturer scbm = new SearchCarByManufacturer(userProcessContainer, cars1);
         userProcessContainer.add("SearchCarByManufacturer", scbm);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();

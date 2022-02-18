@@ -15,16 +15,16 @@ import model.Cars;
  *
  * @author gaurav
  */
-public class SearchCarBySerialNumberJPanel extends javax.swing.JPanel {
+public class SearchCarBySeatsJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form SearchCarBySerialNumberJPanel
+     * Creates new form SearchCarBySeatsJPanel
      */
     
     private JPanel userProcessContainer;
     private Cars cars;
-    private Car car;
-    public SearchCarBySerialNumberJPanel(JPanel upc, Cars c) {
+    private List<Car> cars1;
+    public SearchCarBySeatsJPanel(JPanel upc , Cars c) {
         cars = c;
         userProcessContainer = upc;
         initComponents();
@@ -41,12 +41,14 @@ public class SearchCarBySerialNumberJPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtSerialNumber = new javax.swing.JTextField();
+        txtMinSeats = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        txtMaxSeats = new javax.swing.JTextField();
 
-        jLabel1.setText("Search Car By Serial Number");
+        jLabel1.setText("Search Car By Seats Number");
 
-        jLabel2.setText("Serial Number :");
+        jLabel2.setText("Minimum Seats");
 
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -55,25 +57,31 @@ public class SearchCarBySerialNumberJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel3.setText("Maximum Seats");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(124, 124, 124)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 313, Short.MAX_VALUE)
-                .addComponent(txtSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(137, 137, 137))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(292, 292, 292)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(344, 344, 344)
+                        .addGap(340, 340, 340)
                         .addComponent(btnSearch)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(124, 124, 124)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 310, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtMinSeats, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMaxSeats, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(137, 137, 137))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,10 +91,14 @@ public class SearchCarBySerialNumberJPanel extends javax.swing.JPanel {
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txtSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                    .addComponent(txtMinSeats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtMaxSeats, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(btnSearch)
-                .addContainerGap(475, Short.MAX_VALUE))
+                .addContainerGap(452, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -94,12 +106,13 @@ public class SearchCarBySerialNumberJPanel extends javax.swing.JPanel {
         try{
         Car c;
         
-        int serialNumber = (Integer.parseInt(txtSerialNumber.getText()));
-        c = cars.searchCarBySerialNumber(serialNumber);
+        int seatMin = Integer.parseInt(txtMinSeats.getText());
+        int seatMax = Integer.parseInt(txtMaxSeats.getText());
+        cars1 = cars.getCarsBySeatsNumber(seatMin,seatMax);
         
-        if(c != null){
-        SearchCarBySerialNumber scbsn = new SearchCarBySerialNumber(userProcessContainer, c);
-        userProcessContainer.add("SearchCarBySerialNumber", scbsn);
+        if(cars1.size()>0){
+        SearchCarBySeats scbs = new SearchCarBySeats(userProcessContainer, cars1);
+        userProcessContainer.add("SearchCarBySeats", scbs);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
         }
@@ -118,6 +131,8 @@ public class SearchCarBySerialNumberJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnSearch;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField txtSerialNumber;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField txtMaxSeats;
+    private javax.swing.JTextField txtMinSeats;
     // End of variables declaration//GEN-END:variables
 }

@@ -73,7 +73,6 @@ public class CreateCarJPanel extends javax.swing.JPanel {
         lblSave = new javax.swing.JButton();
         txtAvail = new javax.swing.JTextField();
         lblCreateCar = new javax.swing.JLabel();
-        txtPhotoChooser = new javax.swing.JFileChooser();
 
         jMenu1.setText("jMenu1");
 
@@ -139,8 +138,6 @@ public class CreateCarJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(292, 292, 292)
                 .addComponent(lblSave)
-                .addGap(47, 47, 47)
-                .addComponent(txtPhotoChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -185,10 +182,8 @@ public class CreateCarJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtMaintainanceCertificateDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblMaintainanceCertificateDate))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblSave)
-                    .addComponent(txtPhotoChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addComponent(lblSave)
                 .addContainerGap(94, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -349,7 +344,6 @@ public class CreateCarJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtManufacturer;
     private javax.swing.JTextField txtManufatctureYear;
     private javax.swing.JTextField txtModelNumber;
-    private javax.swing.JFileChooser txtPhotoChooser;
     private javax.swing.JTextField txtSeatsNumber;
     private javax.swing.JTextField txtSerialNo;
     // End of variables declaration//GEN-END:variables
