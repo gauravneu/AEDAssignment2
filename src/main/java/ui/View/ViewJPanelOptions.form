@@ -25,7 +25,7 @@
                   <Component id="btnListCarsByManufactureYear" alignment="0" max="32767" attributes="0"/>
                   <Component id="btnListCarsBySeatNumbers" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="218" max="32767" attributes="0"/>
+              <EmptySpace pref="171" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="btnListCarBySerialNumber" max="32767" attributes="0"/>
                   <Component id="btnListCarsByModelNumber" alignment="0" max="32767" attributes="0"/>

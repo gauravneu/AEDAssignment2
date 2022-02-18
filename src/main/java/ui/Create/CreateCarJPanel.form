@@ -33,54 +33,68 @@
               <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="lblMaintainanceCertificateDate" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblSerialNo" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblSeatsNumber" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblCity" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblAvailability" alignment="1" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="283" max="-2" attributes="0"/>
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                      <Component id="txtMessage" min="-2" pref="132" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="lblMaintainanceCertificateDate" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblSerialNo" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblSeatsNumber" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblCity" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblAvailability" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="lblManufacturer" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblModelNumber" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblManufactureYear" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblSave" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lblManufactureYear" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="lblManufacturer" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblModelNumber" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnLoadCars" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="txtManufacturer" alignment="0" pref="93" max="32767" attributes="0"/>
+                                  <Component id="txtModelNumber" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtManufatctureYear" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtSeatsNumber" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtSerialNo" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtCity" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="txtCheckA" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="txtCheckNA" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="txtMaintainanceCertificateDate" min="-2" pref="90" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="292" max="-2" attributes="0"/>
-                      <Component id="lblSave" min="-2" max="-2" attributes="0"/>
-                  </Group>
               </Group>
-              <EmptySpace pref="63" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnLoadCars" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtMaintainanceCertificateDate" min="-2" pref="90" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="txtManufacturer" alignment="0" pref="93" max="32767" attributes="0"/>
-                          <Component id="txtModelNumber" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtManufatctureYear" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtSeatsNumber" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtSerialNo" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtCity" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtCheckA" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="txtCheckNA" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace pref="101" max="32767" attributes="0"/>
+              <EmptySpace pref="133" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -134,12 +148,17 @@
                   <Component id="txtMaintainanceCertificateDate" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblMaintainanceCertificateDate" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="txtMessage" max="32767" attributes="0"/>
+                  <Component id="jButton1" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace pref="29" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblSave" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnLoadCars" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="94" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -229,6 +248,16 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLoadCarsActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Search image"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txtMessage">
     </Component>
   </SubComponents>
 </Form>

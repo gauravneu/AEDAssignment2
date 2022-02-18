@@ -147,7 +147,7 @@ public class ViewJPanelOptions extends javax.swing.JPanel {
                     .addComponent(btnFirstAvailableCar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnListCarsByManufactureYear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnListCarsBySeatNumbers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnListCarBySerialNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnListCarsByModelNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -209,14 +209,20 @@ public class ViewJPanelOptions extends javax.swing.JPanel {
         try{
         Car c;
         c = cars.searchFirstAvailableCar();
+       //     System.out.println(c);
         if(c!=null){
+     //       System.out.println("Found first Car");
         FindFirstAvailableCarJPanel ffacjp = new FindFirstAvailableCarJPanel(userProcessContainer, c);
+     //   System.out.println("1");
         userProcessContainer.add("FindFirstAvailableCarJPanel", ffacjp);
+    //    System.out.println("2");
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+    //    System.out.println("3");
         layout.next(userProcessContainer);
+    //    System.out.println("4");
         }
         else{
-            JOptionPane.showMessageDialog(null, "Nothing found", "No result found matching your criteria!!", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Nothing found", "No Cars Available!!", JOptionPane.WARNING_MESSAGE);
             //return;
         }
         }
@@ -228,7 +234,9 @@ public class ViewJPanelOptions extends javax.swing.JPanel {
     private void btnTotalNumberOfAvailableCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTotalNumberOfAvailableCarsActionPerformed
     try{
         List<Car> c;
+    //    System.out.println(" Before getAllAvailablecarsFromViewJPanel");
         c = cars.getAllAvailableCars();
+     //   System.out.println(" After getAllAvailablecarsFromViewJPanel");
         if(c.size()>0){
         TotalNoOfCarsAvailable tnoca = new TotalNoOfCarsAvailable(userProcessContainer, c);
         userProcessContainer.add("TotalNoOfCarsAvailable", tnoca);
@@ -305,7 +313,7 @@ public class ViewJPanelOptions extends javax.swing.JPanel {
         Date date;
         date = cars.getLastUpdateTime();
         if(date!= null){
-            System.out.println(date);
+  //          System.out.println(date);
             JOptionPane.showMessageDialog(this,
                     date.toString().substring(4,10) + "," + date.toString().substring(24) + " " + date.toString().substring(11,19),
                     "Fleet was last updated at",

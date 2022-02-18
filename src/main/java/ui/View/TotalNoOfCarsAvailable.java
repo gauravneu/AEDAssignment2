@@ -39,11 +39,11 @@ public class TotalNoOfCarsAvailable extends javax.swing.JPanel {
         model.setRowCount(0);
         
         for (Car c : cars1) {
-            Object row[] = new Object[4];
-            row[0] = c.getManufacturer();
-            row[1] = c.getSerialNumber();
-            row[2] = c.getSeatsNumber();
-            row[3] = c.isAvailability();
+            Object row[] = new Object[3];
+            row[0] = c.getSerialNumber();
+            row[1] = c.getManufacturer();
+            if(c.isAvailability() == true){row[2] = "Available";}
+            else{row[2] = "Not Available";}
             model.addRow(row);
         }
     }
@@ -65,13 +65,13 @@ public class TotalNoOfCarsAvailable extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Manufacturer", "Serial No", "Seats", "Availability"
+                "Serial No", "Manufacturer", "Availability"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -105,11 +105,11 @@ public class TotalNoOfCarsAvailable extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jButton1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(326, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 43, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 839, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(207, 207, 207))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,8 +121,8 @@ public class TotalNoOfCarsAvailable extends javax.swing.JPanel {
                     .addComponent(jLabel1)
                     .addComponent(txtTotalNoOfCars, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(245, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -31,6 +31,8 @@ public class Cars {
         this.cars = cars;
     }
     
+   
+    
     
     //Add New Car
     
@@ -57,6 +59,12 @@ public class Cars {
         return null;
     } 
     
+    //Remove Car from 
+    
+    
+     public void removeProduct(Car c) {
+        cars.remove(c);
+    }
     
     //Searching Cars By Brand/Make
     
@@ -66,11 +74,11 @@ public class Cars {
         
     List<Car> car2 = new ArrayList<>();
     for (Car c: cars){
-        System.out.println("Loop running");
-        System.out.println("c,gm : " + c.getManufacturer());
-        System.out.println("m : "+ manufacturer);
-        if (c.getManufacturer().equals(manufacturer)){
-            System.out.println("Cars.java | searchCarByManufacturer | c.getManufacturer()  | manufacturer" + c.getManufacturer() + manufacturer);
+ //       System.out.println("Loop running");
+ //       System.out.println("c,gm : " + c.getManufacturer());
+ //       System.out.println("m : "+ manufacturer);
+        if (c.getManufacturer().toLowerCase().equals(manufacturer.toLowerCase())){
+  //          System.out.println("Cars.java | searchCarByManufacturer | c.getManufacturer()  | manufacturer" + c.getManufacturer() + manufacturer);
         car2.add(c);
         }      
     }
@@ -99,10 +107,10 @@ public class Cars {
     //Get All Cars
     
     public List<Car> getAllAvailableCars(){
-    
+  //  System.out.println(" getAllAvailablecars called");
     List<Car> car2 = new ArrayList<Car>();
     for (Car c: cars){
-      //  System.out.println(String.valueOf(c.isAvailability()));
+  //      System.out.println(String.valueOf(c.isAvailability()));
         if (c.isAvailability() == true){
         car2.add(c);
         }
@@ -120,8 +128,9 @@ public class Cars {
     //Get First Available Car
     
     public Car searchFirstAvailableCar(){
-        
+  //      System.out.println("Search All called");
         for (Car c : cars){
+   //         System.out.println(c.isAvailability());
             if (c.isAvailability() == true){
             return c;
         }           
@@ -163,7 +172,7 @@ public class Cars {
     public ArrayList<Car> getCarsByCity(String city){
     ArrayList<Car> car2 = new ArrayList<Car>();
     for (Car c: cars){
-        if (c.getCity().equals(city)){
+        if (c.getCity().toLowerCase().equals(city.toLowerCase())){
         car2.add(c);
         }
     }

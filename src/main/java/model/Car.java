@@ -4,8 +4,10 @@
  */
 package model;
 
+import java.awt.image.BufferedImage;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JFileChooser;
 
 /**
  *
@@ -32,6 +34,7 @@ private Date lastUpdateOrCreate;
 private boolean availability;
 private String city;
 private Date maintainanceCertificateDate;
+private BufferedImage photo;
 
     public String getEngineNo() {
         return engineNo;
@@ -208,6 +211,18 @@ private Date maintainanceCertificateDate;
     public void setOwnerEmailAddresses(String wnerEmailAddresses) {
         this.ownerEmailAddresses = wnerEmailAddresses;
     }
-        
 
+    public BufferedImage getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(BufferedImage photo) {
+        this.photo = photo;
+    }
+
+    
+    @Override
+    public String toString(){
+        return manufacturer;
+    }
 }

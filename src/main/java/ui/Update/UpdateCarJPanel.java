@@ -9,6 +9,7 @@ import java.awt.Component;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 import model.Car;
 import model.Cars;
 
@@ -24,14 +25,30 @@ public class UpdateCarJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private Cars cars;
     private List<Car> cars1;
+    private Car car;
     
     public UpdateCarJPanel(JPanel upc , Cars c) {
         cars = c;
         cars1 = c.getAllCars();
         initComponents();
         userProcessContainer = upc;
-        
+        refreshTable();
     }
+        public void refreshTable(){
+        DefaultTableModel model = (DefaultTableModel) carTable.getModel();
+        model.setRowCount(0);
+        for (Car c1 : cars1) {
+            Object row[] = new Object[5];
+            row[0] = c1.getSerialNumber();
+            row[1] = c1;
+            row[2] = c1.getSeatsNumber();
+            if(c1.isAvailability() == true){row[3] = "Available";}
+            else{row[3] = "Not Available";}
+            row[4] = c1.getCity();
+            model.addRow(row);
+        }
+        }
+    
 
 
     /**
@@ -44,72 +61,91 @@ public class UpdateCarJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         lblUpdateCar = new javax.swing.JLabel();
-        lblSerialNumber = new javax.swing.JLabel();
-        txtSerialNumber = new javax.swing.JTextField();
-        btnSearch = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        carTable = new javax.swing.JTable();
 
         lblUpdateCar.setText("UPDATE CAR");
 
-        lblSerialNumber.setText("Serial Number :");
-
-        txtSerialNumber.addActionListener(new java.awt.event.ActionListener() {
+        btnUpdate.setText("Update Car");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSerialNumberActionPerformed(evt);
+                btnUpdateActionPerformed(evt);
             }
         });
 
-        btnSearch.setText("Update Car");
-        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+        btnDelete.setText("Delete car");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchActionPerformed(evt);
+                btnDeleteActionPerformed(evt);
             }
         });
+
+        carTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Serial No", "Manufacturer", "Seats", "Availability", "City"
+            }
+        ));
+        jScrollPane1.setViewportView(carTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(222, 222, 222)
-                        .addComponent(lblSerialNumber)
-                        .addGap(134, 134, 134)
-                        .addComponent(txtSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(353, 353, 353)
-                        .addComponent(lblUpdateCar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(343, 343, 343)
-                        .addComponent(btnSearch)))
-                .addContainerGap(291, Short.MAX_VALUE))
+                .addGap(353, 353, 353)
+                .addComponent(lblUpdateCar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(144, 144, 144)
+                .addComponent(btnUpdate)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 365, Short.MAX_VALUE)
+                .addComponent(btnDelete)
+                .addGap(121, 121, 121))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(49, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(47, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
+                .addGap(20, 20, 20)
                 .addComponent(lblUpdateCar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 513, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSerialNumber)
-                    .addComponent(txtSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addComponent(btnSearch)
-                .addContainerGap(436, Short.MAX_VALUE))
+                    .addComponent(btnUpdate)
+                    .addComponent(btnDelete))
+                .addGap(40, 40, 40))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(66, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(105, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtSerialNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSerialNumberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSerialNumberActionPerformed
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        
+    try{
+        
+        int selectedRowIndex = carTable.getSelectedRow();
 
-    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        if (selectedRowIndex < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row from the table first", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         
-        try{
-        Car c;
-        
-        int SerialNo = Integer.parseInt(txtSerialNumber.getText());
-        c = cars.searchCarBySerialNumber(SerialNo);
+        DefaultTableModel model = (DefaultTableModel) carTable.getModel();
+        Car c = (Car) carTable.getValueAt(selectedRowIndex, 1);
         
         if(c!=null){
         UpdatingCarJPanel vpdjp = new UpdatingCarJPanel(userProcessContainer, c);
@@ -127,14 +163,31 @@ public class UpdateCarJPanel extends javax.swing.JPanel {
         }
         
         
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = carTable.getSelectedRow();
+
+        if (selectedRowIndex < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row from the table first", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         
-    }//GEN-LAST:event_btnSearchActionPerformed
+        DefaultTableModel model = (DefaultTableModel) carTable.getModel();
+        Car c = (Car) carTable.getValueAt(selectedRowIndex, 1);
+        cars.removeProduct(c);
+        
+        JOptionPane.showMessageDialog(null, "Selected Row is deleted", "Info", JOptionPane.INFORMATION_MESSAGE);
+        refreshTable();
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnSearch;
-    private javax.swing.JLabel lblSerialNumber;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnUpdate;
+    private javax.swing.JTable carTable;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblUpdateCar;
-    private javax.swing.JTextField txtSerialNumber;
     // End of variables declaration//GEN-END:variables
 }

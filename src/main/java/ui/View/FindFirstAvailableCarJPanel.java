@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import javax.imageio.ImageIO;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -32,6 +33,7 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
     private Car car1;
     private List<Car> cars1;
     public FindFirstAvailableCarJPanel(JPanel upc , Car c) {
+   //     System.out.println("constructor");
         car1 = c;
         userProcessContainer = upc;
         initComponents();
@@ -75,9 +77,10 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
                 txtSerialNumber.setText(String.valueOf(car1.getSerialNumber()));
                 String updateOrCreateDate = car1.getLastUpdateOrCreate().toString().substring(4,10) 
                         + "," + car1.getLastUpdateOrCreate().toString().substring(24);
-                txtLastUpdateOrCreate.setText(updateOrCreateDate);      
+                txtLastUpdateOrCreate.setText(updateOrCreateDate);
         
-        
+                ImageIcon ic = new ImageIcon(car1.getPhoto().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
+                lblPic.setIcon(ic);
     }
 
     /**
@@ -99,7 +102,6 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
         txtColor = new javax.swing.JTextField();
         lblColor = new javax.swing.JLabel();
         lblPhoto = new javax.swing.JLabel();
-        txtPhoto = new javax.swing.JTextField();
         txtWarrantyYear = new javax.swing.JTextField();
         lblWarrantyYear = new javax.swing.JLabel();
         lblOwnerAddress = new javax.swing.JLabel();
@@ -133,6 +135,7 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
         lblCity = new javax.swing.JLabel();
         txtCity = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        lblPic = new javax.swing.JLabel();
 
         jLabel1.setText("First Available car");
 
@@ -176,12 +179,14 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
 
         lblCity.setText("City :");
 
-        jButton1.setText("jButton1");
+        jButton1.setText("<< Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        lblPic.setText("Photo");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -196,10 +201,18 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblPhoto)
+                                .addComponent(lblAvailability)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtAvailability, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbllastUpdateOrCreate)
+                                    .addComponent(lblMaintainanceCertificateDate))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtLastUpdateOrCreate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtMaintainanceCertificateDate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,7 +232,8 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addComponent(lblLicensePlates)
                                             .addGap(103, 103, 103)))
-                                    .addComponent(lblCity))
+                                    .addComponent(lblCity)
+                                    .addComponent(lblPhoto))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 319, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,19 +253,8 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
                                         .addComponent(txtOwnerName, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(txtLicensePlates, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(txtSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(txtCity, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblAvailability)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtAvailability, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lbllastUpdateOrCreate)
-                                    .addComponent(lblMaintainanceCertificateDate))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtLastUpdateOrCreate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtMaintainanceCertificateDate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(txtCity, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblPic, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(102, 102, 102))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(37, 37, 37)
@@ -346,8 +349,8 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPhoto)
-                    .addComponent(txtPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(182, Short.MAX_VALUE))
+                    .addComponent(lblPic, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(192, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -357,9 +360,8 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 849, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 849, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -397,6 +399,7 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblOwnerSocialSecurityNumber;
     private javax.swing.JLabel lblOwnerTelephoneNumbers;
     private javax.swing.JLabel lblPhoto;
+    private javax.swing.JLabel lblPic;
     private javax.swing.JLabel lblSeatsNumber;
     private javax.swing.JLabel lblSerialNumber;
     private javax.swing.JLabel lblWarrantyYear;
@@ -417,7 +420,6 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtOwnerName;
     private javax.swing.JTextField txtOwnerSocialSecurityNumber;
     private javax.swing.JTextField txtOwnerTelephoneNumbers;
-    private javax.swing.JTextField txtPhoto;
     private javax.swing.JTextField txtSeatsNumber;
     private javax.swing.JTextField txtSerialNumber;
     private javax.swing.JTextField txtWarrantyYear;
