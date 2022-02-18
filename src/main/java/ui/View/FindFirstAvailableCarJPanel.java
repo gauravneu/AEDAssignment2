@@ -4,6 +4,8 @@
  */
 package ui.View;
 
+import java.awt.CardLayout;
+import java.awt.Component;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -130,6 +132,7 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
         txtMaintainanceCertificateDate = new javax.swing.JTextField();
         lblCity = new javax.swing.JLabel();
         txtCity = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         jLabel1.setText("First Available car");
 
@@ -172,6 +175,13 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
         lblMaintainanceCertificateDate.setText("Maintainance Certificate Date :");
 
         lblCity.setText("City :");
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -244,7 +254,9 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
                                     .addComponent(txtMaintainanceCertificateDate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(102, 102, 102))))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(294, 294, 294)
+                .addGap(37, 37, 37)
+                .addComponent(jButton1)
+                .addGap(160, 160, 160)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -252,7 +264,9 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtManufacturer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -353,8 +367,17 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

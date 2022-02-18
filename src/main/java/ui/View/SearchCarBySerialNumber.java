@@ -4,6 +4,8 @@
  */
 package ui.View;
 
+import java.awt.CardLayout;
+import java.awt.Component;
 import java.util.List;
 import javax.swing.JPanel;
 import model.Car;
@@ -119,6 +121,7 @@ public class SearchCarBySerialNumber extends javax.swing.JPanel {
         txtCity = new javax.swing.JTextField();
         lblPhoto = new javax.swing.JLabel();
         txtPhoto = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         jLabel1.setText("Car By Serial Number");
 
@@ -162,6 +165,13 @@ public class SearchCarBySerialNumber extends javax.swing.JPanel {
 
         lblPhoto.setText("Photo :");
 
+        jButton1.setText("<< Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -195,8 +205,10 @@ public class SearchCarBySerialNumber extends javax.swing.JPanel {
                                     .addComponent(lblSeatsNumber)
                                     .addComponent(lblColor)
                                     .addComponent(lblWarrantyYear)
-                                    .addComponent(lblManufactureYear)
-                                    .addComponent(lblOwnerAddress))
+                                    .addComponent(lblOwnerAddress)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jButton1)
+                                        .addComponent(lblManufactureYear)))
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(lblLicensePlates)
                                     .addGap(103, 103, 103)))
@@ -238,8 +250,10 @@ public class SearchCarBySerialNumber extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel1)
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtManufacturer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -324,8 +338,17 @@ public class SearchCarBySerialNumber extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblAvailability;
     private javax.swing.JLabel lblCity;

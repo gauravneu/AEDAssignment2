@@ -5,6 +5,7 @@
 package ui.View;
 
 import java.awt.CardLayout;
+import java.awt.Component;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -47,6 +48,7 @@ public class SearchCarsByManufacturersJPanel extends javax.swing.JPanel {
         lblManufacturer = new javax.swing.JLabel();
         txtManufacturer = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         lblSearchCarByManufacture.setText("Search Car By Manufacture");
 
@@ -59,6 +61,13 @@ public class SearchCarsByManufacturersJPanel extends javax.swing.JPanel {
             }
         });
 
+        jButton1.setText("<< Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -66,7 +75,9 @@ public class SearchCarsByManufacturersJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(291, 291, 291)
+                        .addGap(33, 33, 33)
+                        .addComponent(jButton1)
+                        .addGap(161, 161, 161)
                         .addComponent(lblSearchCarByManufacture, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(163, 163, 163)
@@ -82,7 +93,9 @@ public class SearchCarsByManufacturersJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(43, 43, 43)
-                .addComponent(lblSearchCarByManufacture, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblSearchCarByManufacture, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
                 .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblManufacturer)
@@ -115,9 +128,19 @@ public class SearchCarsByManufacturersJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnSearchActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSearch;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel lblManufacturer;
     private javax.swing.JLabel lblSearchCarByManufacture;
     private javax.swing.JTextField txtManufacturer;
