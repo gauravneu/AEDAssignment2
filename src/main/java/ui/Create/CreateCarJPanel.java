@@ -326,7 +326,6 @@ public class CreateCarJPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(this, "Select one checkBox: Available/NonAvailable");
                     return;
             }
-       //     System.out.println(txtCheckA.getSelectedObjects());
             availability = (txtCheckA.getSelectedObjects()!= null);
          //   System.out.println(availability);
             

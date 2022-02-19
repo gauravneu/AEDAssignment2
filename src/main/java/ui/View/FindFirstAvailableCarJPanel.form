@@ -232,9 +232,12 @@
                           <Component id="lblCity" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblPhoto" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblPic" alignment="3" min="-2" pref="129" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblPic" min="-2" pref="129" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                              <Component id="lblPhoto" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace pref="192" max="32767" attributes="0"/>
                   </Group>
@@ -394,9 +397,6 @@
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblPic">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Photo"/>
-              </Properties>
             </Component>
           </SubComponents>
         </Container>

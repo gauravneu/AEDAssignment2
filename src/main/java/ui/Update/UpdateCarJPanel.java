@@ -38,13 +38,18 @@ public class UpdateCarJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) carTable.getModel();
         model.setRowCount(0);
         for (Car c1 : cars1) {
-            Object row[] = new Object[5];
+            Object row[] = new Object[8];
             row[0] = c1.getSerialNumber();
             row[1] = c1;
             row[2] = c1.getSeatsNumber();
             if(c1.isAvailability() == true){row[3] = "Available";}
             else{row[3] = "Not Available";}
             row[4] = c1.getCity();
+            row[5] =c1. getColor();
+            row[6] = c1.getModelNumber();
+            row[7] = c1.getManufactureYear();
+            
+            
             model.addRow(row);
         }
         }
@@ -84,13 +89,13 @@ public class UpdateCarJPanel extends javax.swing.JPanel {
 
         carTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Serial No", "Manufacturer", "Seats", "Availability", "City"
+                "Serial No", "Manufacturer", "Seats", "Availability", "City", "Color", "Model No", "Manuifacture Year"
             }
         ));
         jScrollPane1.setViewportView(carTable);

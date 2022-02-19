@@ -50,19 +50,8 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
                 txtOwnerEmailAddresses.setText(car1.getOwnerEmailAddresses());
                 txtOwnerSocialSecurityNumber.setText(String.valueOf(car1.getOwnerSocialSecurityNumber()));
                 txtOwnerTelephoneNumbers.setText(String.valueOf(car1.getOwnerTelephoneNumbers()));
-   //           BufferedImage image;
-   //            try {
-   //                image = ImageIO.read(new File("./"+car1.getPhoto()));
-   //               ImageIcon ic = new ImageIcon(image.getScaledInstance(100, 100, Image.SCALE_DEFAULT));
-   //                
-   //                carPhoto.setIcon(ic);
-                   
-   //            } catch (IOException ex) {
-   //                 JOptionPane.showMessageDialog(this, "Not a valid image to show!!");
-   //           }
                 txtSeatsNumber.setText(String.valueOf(car1.getSeatsNumber()));
-                txtWarrantyYear.setText(String.valueOf(car1.getWarrantyYear()));
-                
+                txtWarrantyYear.setText(String.valueOf(car1.getWarrantyYear()));  
                 String maintainanceDate = car1.getMaintainanceCertificateDate().toString().substring(4,10) 
                         + "," + car1.getMaintainanceCertificateDate().toString().substring(24);                
                 txtMaintainanceCertificateDate.setText(maintainanceDate);
@@ -185,8 +174,6 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        lblPic.setText("Photo");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -347,9 +334,11 @@ public class FindFirstAvailableCarJPanel extends javax.swing.JPanel {
                     .addComponent(txtCity, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblCity))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPhoto)
-                    .addComponent(lblPic, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblPic, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(lblPhoto)))
                 .addContainerGap(192, Short.MAX_VALUE))
         );
 
