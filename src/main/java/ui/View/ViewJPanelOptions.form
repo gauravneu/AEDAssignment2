@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="btnTotalNumberOfAvailableCars" max="32767" attributes="0"/>
+                  <Component id="btnListCarsByManufacturer" max="32767" attributes="0"/>
+                  <Component id="btnFirstAvailableCar" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnListCarsByManufactureYear" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnListCarsBySeatNumbers" alignment="0" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace pref="171" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="btnListCarBySerialNumber" max="32767" attributes="0"/>
+                  <Component id="btnListCarsByModelNumber" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnListAllCarManufacturers" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnLastTimeFleetWasUpdated" alignment="0" pref="261" max="32767" attributes="0"/>
+                  <Component id="btnListCarsByGivenCity" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="365" max="-2" attributes="0"/>
+                      <Component id="lblViewCars" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="251" max="-2" attributes="0"/>
+                      <Component id="btnListCarsExpiredMaintainanceDate" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+              <Component id="lblViewCars" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnFirstAvailableCar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnListCarBySerialNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnTotalNumberOfAvailableCars" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnListCarsByModelNumber" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnListCarsByManufacturer" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnListAllCarManufacturers" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnListCarsByManufactureYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnLastTimeFleetWasUpdated" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnListCarsBySeatNumbers" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnListCarsByGivenCity" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+              <Component id="btnListCarsExpiredMaintainanceDate" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="186" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="btnFirstAvailableCar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Find First Available Car"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFirstAvailableCarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblViewCars">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="VIEW CARS"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnTotalNumberOfAvailableCars">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Total Number Of Available Cars"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTotalNumberOfAvailableCarsActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnListCarsByManufacturer">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="List Cars By Manufacturer"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListCarsByManufacturerActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnListCarsByManufactureYear">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="List Cars By Manufacture Year"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListCarsByManufactureYearActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnListCarsBySeatNumbers">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="List Cars By Seat Numbers"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListCarsBySeatNumbersActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnListCarBySerialNumber">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="List Car By Serial Number"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListCarBySerialNumberActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnListCarsByModelNumber">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="List Cars By Model Number"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListCarsByModelNumberActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnListAllCarManufacturers">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="List All Car manufacturers"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListAllCarManufacturersActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnLastTimeFleetWasUpdated">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Last Time Fleet Was Updated"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLastTimeFleetWasUpdatedActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnListCarsByGivenCity">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="List Cars By Given City"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListCarsByGivenCityActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnListCarsExpiredMaintainanceDate">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="List Cars With Expired Maintainance Date"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListCarsExpiredMaintainanceDateActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>
